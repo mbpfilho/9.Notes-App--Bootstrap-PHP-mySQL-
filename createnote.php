@@ -6,5 +6,5 @@ include('connection.php');
 
 //get the corrent time
 
-//run a query tocreate a new note
+//run a query to create a new note
 ?>
