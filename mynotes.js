@@ -1,11 +1,13 @@
 $(function(){
     //define variables
     var activeNote=0;
+    var editMode=false;
     //load notes on page load: Ajax call to loadnotes.php
     $.ajax({
         url: "loadnotes.php",
         success: function(data) {
             $('#notes').html(data);
+            clickonNote();
         },
         error: function() {
             $("#alertContent").text("There was an error with the Ajax call.");
@@ -64,6 +66,7 @@ $(function(){
             success: function(data) {
                 $('#notes').html(data);
                 showHide(["#addNote","#edit","#notes"],["#allNotes","#notePad"]);
+                clickonNote();
             },
             error: function() {
                 $("#alertContent").text("There was an error with the Ajax call.");
@@ -77,6 +80,21 @@ $(function(){
 
     //functions
         //click on a note
+        function clickonNote(){
+            $(".noteheader").click(function(){
+                if(!editMode){
+                    //update activemode variable to the note id
+                    activeNote=$(this).attr("id");
+
+                    //fill text area
+                    $("textarea").val($(this).find(".text").text());
+
+                    //show/hide elements
+                    showHide(["#notePad","#allNotes"],["#notes","#addNote","#edit","#done"]);
+                    $("textarea").focus();
+                }
+            })
+        }
         //click on delete
         //show Hide function
     function showHide(array1,array2){
