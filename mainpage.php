@@ -48,6 +48,28 @@ if(!isset($_SESSION["user_id"])){
             background-color: #fbefff;
             padding: 10px;
         }
+
+        .noteheader{
+            border: 1px solid grey;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 0 10px;
+            background: linear-gradient(#ECEAE7,#FFFFFF);
+        }
+
+        .text {
+            font-size: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .timetext {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
     </style>
   </head>
   <body>

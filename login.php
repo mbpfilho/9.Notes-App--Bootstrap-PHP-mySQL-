@@ -98,14 +98,28 @@ if(!$result){
     //                 <!-- print error -->
     echo "<div class='alert alert-danger'><p>Error storing rememberme data:</p><p>".mysqli_error($link)."</p></div>";
     // echo '<script>alert("Error storing rememberme data.")</script>';
-}else{
-    //preparing $_SESSION["id"] from data extracted from table
-    $sql="SELECT * FROM rememberme WHERE authentificator1='$authentificator1' AND f2authentificator2='$f2authentificator2' AND user_id='$user_id'";
-    $result=mysqli_query($link,$sql);
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC); 
-    $id=$row["id"];
-    $_SESSION["id"]=$id;
-    //   else print success
-    echo "success";
+    exit;
 }
+
+//run a query to delete the empty notes
+$sql="DELETE FROM rememberme WHERE expires<'$expiration'";
+$result=mysqli_query($link,$sql);
+if (!$result){
+    echo "<div class='alert alert-warning'>An error occured deleting old rememberme keys.</div>";
+    exit;
+}
+
+//preparing $_SESSION["id"] from data extracted from table
+$sql="SELECT * FROM rememberme WHERE authentificator1='$authentificator1' AND f2authentificator2='$f2authentificator2' AND user_id='$user_id'";
+$result=mysqli_query($link,$sql);
+if (!$result){
+    echo "<div class='alert alert-warning'>An error occured preparing rememberme id for the session.</div>";
+    exit;
+}
+$row=mysqli_fetch_array($result,MYSQLI_ASSOC); 
+$id=$row["id"];
+$_SESSION["id"]=$id;
+//   else print success
+echo "success";
+
 ?>
