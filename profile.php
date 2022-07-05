@@ -62,10 +62,10 @@
             </div>
             <div class="navbar-collapse collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Profile</a></li>
+                    <li class="active"><a href="#">Profile</a></li>
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Contact us</a></li>
-                    <li class="active"><a href="#">My Notes</a></li>
+                    <li><a href="mainpage.php">My Notes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Logged in as <b>username</b></a></li>
@@ -100,107 +100,107 @@
         </div>
     </div>
 
-        <!-- update username form -->
-        <form method="post" id="updateusernameForm">
-            <div class="modal" id="updateusername" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button class="close" data-dismiss="modal">&times;</button>
-                    <h4 id="myModalLabel">Edit Username:</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- login message from php file -->
-                        <div id="loginMessage"></div>
-
-                        <div class="form-group">
-                            <label for="loginemail">Username:</label>
-                            <input class="form-control" id="username" type="text" name="username" maxlength="30" value="username value">
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input class="btn green" name="updateusername" type="submit" value="Submit">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
+    <!-- update username form -->
+    <form method="post" id="updateusernameForm">
+        <div class="modal" id="updateusername" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 id="myModalLabel">Edit Username:</h4>
                 </div>
+                <div class="modal-body">
+                    <!-- login message from php file -->
+                    <div id="updateusernamemessage"></div>
+
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input class="form-control" id="username" type="text" name="username" maxlength="30" value="username value">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input class="btn green" name="updateusername" type="submit" value="Submit">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
-        </form>
-
-        <!-- update email form -->
-        <form method="post" id="updateemailForm">
-            <div class="modal" id="updateemail" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button class="close" data-dismiss="modal">&times;</button>
-                    <h4 id="myModalLabel">Enter new email:</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- login message from php file -->
-                        <div id="loginMessage"></div>
-
-                        <div class="form-group">
-                            <label for="loginemail">Email:</label>
-                            <input class="form-control" id="email" type="email" name="email" maxlength="50" value="email value">
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input class="btn green" name="updateusername" type="submit" value="Submit">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </form>
-
-        <!-- update pasword form -->
-        <form method="post" id="updatepasswordForm">
-            <div class="modal" id="updatepassword" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button class="close" data-dismiss="modal">&times;</button>
-                    <h4 id="myModalLabel">Enter current and new passwords:</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- login message from php file -->
-                        <div id="loginMessage"></div>
-
-                        <div class="form-group">
-                            <label for="currentpassword" class="sr-only">Current password:</label>
-                            <input class="form-control" id="currentpassword" type="password" name="currentpassword" maxlength="30" placeholder="Current password">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password" class="sr-only">New password:</label>
-                            <input class="form-control" id="password" type="password" name="password" maxlength="30" placeholder="New password">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password2" class="sr-only">Confirm password:</label>
-                            <input class="form-control" id="password2" type="password" name="password2" maxlength="30" placeholder="Confirm password">
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input class="btn green" name="updateusername" type="submit" value="Submit">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </form>
-
-
-        <!-- Footer -->
-        <div id="footer">
-            <div class="container">
-                <p>Copyright &copy; 2022-<?php echo date("Y")?></p>
             </div>
         </div>
+    </form>
+
+    <!-- update email form -->
+    <form method="post" id="updateemailForm">
+        <div class="modal" id="updateemail" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 id="myModalLabel">Enter new email:</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- login message from php file -->
+                    <div id="loginMessage"></div>
+
+                    <div class="form-group">
+                        <label for="loginemail">Email:</label>
+                        <input class="form-control" id="email" type="email" name="email" maxlength="50" value="email value">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input class="btn green" name="updateusername" type="submit" value="Submit">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- update pasword form -->
+    <form method="post" id="updatepasswordForm">
+        <div class="modal" id="updatepassword" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 id="myModalLabel">Enter current and new passwords:</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- login message from php file -->
+                    <div id="loginMessage"></div>
+
+                    <div class="form-group">
+                        <label for="currentpassword" class="sr-only">Current password:</label>
+                        <input class="form-control" id="currentpassword" type="password" name="currentpassword" maxlength="30" placeholder="Current password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="sr-only">New password:</label>
+                        <input class="form-control" id="password" type="password" name="password" maxlength="30" placeholder="New password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password2" class="sr-only">Confirm password:</label>
+                        <input class="form-control" id="password2" type="password" name="password2" maxlength="30" placeholder="Confirm password">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input class="btn green" name="updateusername" type="submit" value="Submit">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <p>Copyright &copy; 2022-<?php echo date("Y")?></p>
+        </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

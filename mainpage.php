@@ -127,12 +127,12 @@ if(!isset($_SESSION["user_id"])){
         </div>
     </div>
 
-        <!-- Footer -->
-        <div id="footer">
-            <div class="container">
-                <p>Copyright &copy; 2022-<?php echo date("Y")?></p>
-            </div>
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <p>Copyright &copy; 2022-<?php echo date("Y")?></p>
         </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
