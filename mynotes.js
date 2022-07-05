@@ -8,6 +8,7 @@ $(function(){
         success: function(data) {
             $('#notes').html(data);
             clickonNote();
+            clickonDelete();
         },
         error: function() {
             $("#alertContent").text("There was an error with the Ajax call.");
@@ -48,7 +49,7 @@ $(function(){
             data: {note:$(this).val(),id:activeNote},
             success: function(data) {
                 if(data=="error"){
-                    $("#alertContent").text("There was an error updateing the note in the database.");
+                    $("#alertContent").text("There was an error updating the note in the database.");
                     $("#alert").fadeIn();
                 }
             },
@@ -67,6 +68,7 @@ $(function(){
                 $('#notes').html(data);
                 showHide(["#addNote","#edit","#notes"],["#allNotes","#notePad"]);
                 clickonNote();
+                clickonDelete();
             },
             error: function() {
                 $("#alertContent").text("There was an error with the Ajax call.");
@@ -105,6 +107,31 @@ $(function(){
             })
         }
         //click on delete
+        function clickonDelete(){
+            $(".delete").click(function(){
+                var deleteButton=$(this);
+                //send ajax call to delete note
+                $.ajax({
+                    url: "deletenote.php",
+                    type: "POST",
+                    //we need to send the current note id to the php file to be deleted
+                    data: {id:deleteButton.next().attr("id")},
+                    success: function(data) {
+                        if(data=="error"){
+                            $("#alertContent").text("There was an error deleting the note from the database.");
+                            $("#alert").fadeIn();
+                        }else{
+                            //remove containing div
+                            deleteButton.parent().remove();
+                        }
+                    },
+                    error: function() {
+                        $("#alertContent").text("There was an error with the Ajax call.");
+                        $("#alert").fadeIn();
+                    }
+                });
+            })
+        }
 
         //show Hide function
         function showHide(array1,array2){
