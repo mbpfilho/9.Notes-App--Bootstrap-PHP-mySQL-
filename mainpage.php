@@ -29,7 +29,7 @@ if(!isset($_SESSION["user_id"])){
             margin-top: 120px;
         }
 
-        #notePad,#allNotes,#done{
+        #notePad,#allNotes,#done,.delete{
             display: none;
         }
 

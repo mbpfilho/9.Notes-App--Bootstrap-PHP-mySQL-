@@ -76,7 +76,16 @@ $(function(){
     })
 
     //click on done after editing: go to loadnotes.php again
+    
     //click on edit: go to edit mode (show delete buttons)
+    $("#edit").click(function(){
+        //switch to edit mode
+        editMode=true;
+        //reduce the width of notes
+        $(".noteheader").addClass("col-xs-7 col-sm-9");
+        //show hide elements
+        showHide(["#done",".delete"],[this])
+    })
 
     //functions
         //click on a note
@@ -96,8 +105,9 @@ $(function(){
             })
         }
         //click on delete
+
         //show Hide function
-    function showHide(array1,array2){
+        function showHide(array1,array2){
         //array1 all elements id to show
         for(i=0;i<array1.length;i++){
             $(array1[i]).show();
