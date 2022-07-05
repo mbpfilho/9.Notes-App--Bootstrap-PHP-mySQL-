@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["user_id"])){
+    header("location:index.php");
+}
+include("connection.php");
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -68,7 +76,7 @@
                     <li><a href="mainpage.php">My Notes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Logged in as <b>username</b></a></li>
+                    <li><a href="#">Logged in as <b><?php echo $_SESSION["username"] ?></b></a></li>
                     <li><a href="#">Log out</a></li>
                 </ul>
             </div>
