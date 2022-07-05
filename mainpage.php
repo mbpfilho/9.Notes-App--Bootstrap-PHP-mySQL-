@@ -87,13 +87,13 @@ if(!isset($_SESSION["user_id"])){
             </div>
             <div class="navbar-collapse collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="profile.php">Profile</a></li>
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Contact us</a></li>
                     <li class="active"><a href="#">My Notes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Logged in as <b>username</b></a></li>
+                    <li><a href="#">Logged in as <b><?php echo $_SESSION["username"] ?></b></a></li>
                     <li><a href="index.php?logout=1">Log out</a></li>
                 </ul>
             </div>

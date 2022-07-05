@@ -78,6 +78,14 @@ $(function(){
     })
 
     //click on done after editing: go to loadnotes.php again
+    $("#done").click(function(){
+        //switch to non edit mode
+        editMode=false;
+        //expand notes
+        $(".noteheader").removeClass("col-xs-7 col-sm-9");
+        //show hide elements
+        showHide(["#edit"],[this,".delete"])
+    })
     
     //click on edit: go to edit mode (show delete buttons)
     $("#edit").click(function(){
