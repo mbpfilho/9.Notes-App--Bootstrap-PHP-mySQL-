@@ -66,7 +66,7 @@ if(!$result){
 
 //         send email with link to resetpassword.php with user id and activation code
 $message="Please click on this link to reset your password:\n\n";
-$message.="http://localhost/9.Notes%20App%20(Bootstrap%20PHP%20mySQL)/resetpassword.php?user_id=$user_id&key=$key";
+$message.="http://localhost/9.Notes-App--Bootstrap-PHP-mySQL-/resetpassword.php?user_id=$user_id&key=$key";
 if(mail($email,"Reset your password",$message,"From:"."mabuened@gmail.com")){
     //         if email send succsseful
     //             print success message

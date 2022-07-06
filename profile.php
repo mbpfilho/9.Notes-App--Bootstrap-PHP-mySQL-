@@ -3,7 +3,25 @@ session_start();
 if(!isset($_SESSION["user_id"])){
     header("location:index.php");
 }
-include("connection.php");
+$username=$_SESSION["username"];
+$email=$_SESSION["email"];
+
+// include("connection.php");
+// $user_id=$_SESSION["user_id"];
+
+// //get username and email
+// $sql="SELECT * FROM users WHERE user_id='$user_id'";
+// $result=mysqli_query($link,$sql);
+// //store number of rows
+// $count=mysqli_num_rows($result);
+
+// if($count==1){
+//     $row=mysqli_fetch_array($result,MYSQL_ASSOC);
+//     $username=$row["username"];
+//     $email=$row["email"];
+// }else{
+//     echo"Error retrieving username and email from the database";
+// }
 ?>
 
 <!doctype html>
@@ -76,7 +94,7 @@ include("connection.php");
                     <li><a href="mainpage.php">My Notes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Logged in as <b><?php echo $_SESSION["username"] ?></b></a></li>
+                    <li><a href="#">Logged in as <b><?php echo $username;?></b></a></li>
                     <li><a href="#">Log out</a></li>
                 </ul>
             </div>
@@ -92,11 +110,11 @@ include("connection.php");
                     <table class="table table-hover table-condensed table-bordered">
                         <tr data-target="#updateusername" data-toggle="modal">
                             <td>Username</td>
-                            <td>value</td>
+                            <td><?php echo $username;?></td>
                         </tr>
                         <tr data-target="#updateemail" data-toggle="modal">
                             <td>Email</td>
-                            <td>value</td>
+                            <td><?php echo $email;?></td>
                         </tr>
                         <tr data-target="#updatepassword" data-toggle="modal">
                             <td>Password</td>
@@ -123,7 +141,7 @@ include("connection.php");
 
                     <div class="form-group">
                         <label for="username">Username:</label>
-                        <input class="form-control" id="username" type="text" name="username" maxlength="30" value="username value">
+                        <input class="form-control" id="username" type="text" name="username" maxlength="30" value="<?php echo $username;?>">
                     </div>
 
                 </div>
@@ -174,8 +192,8 @@ include("connection.php");
                 <h4 id="myModalLabel">Enter current and new passwords:</h4>
                 </div>
                 <div class="modal-body">
-                    <!-- login message from php file -->
-                    <div id="loginMessage"></div>
+                    <!-- update password message from php file -->
+                    <div id="updatepasswordmessage"></div>
 
                     <div class="form-group">
                         <label for="currentpassword" class="sr-only">Current password:</label>
@@ -216,6 +234,6 @@ include("connection.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     
     <!-- link to javascript file -->
-    <script scr="profile.js"></script>
+    <script src="profile.js"></script>
   </body>
 </html>

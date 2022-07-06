@@ -3,6 +3,25 @@ session_start();
 if(!isset($_SESSION["user_id"])){
     header("location:index.php");
 }
+include("connection.php");
+$user_id=$_SESSION["user_id"];
+
+//get username and email
+$sql="SELECT * FROM users WHERE user_id='$user_id'";
+$result=mysqli_query($link,$sql);
+//store number of rows
+$count=mysqli_num_rows($result);
+
+if($count==1){
+    // $row=mysqli_fetch_assoc($result);?????
+    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $username=$row["username"];
+    $email=$row["email"];
+    $_SESSION["username"]=$username;
+    $_SESSION["email"]=$email;
+}else{
+    echo"Error retrieving username and email from the database";
+}
 ?>
 
 <!doctype html>
@@ -93,7 +112,7 @@ if(!isset($_SESSION["user_id"])){
                     <li class="active"><a href="#">My Notes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Logged in as <b><?php echo $_SESSION["username"] ?></b></a></li>
+                    <li><a href="#">Logged in as <b><?php echo $username;?></b></a></li>
                     <li><a href="index.php?logout=1">Log out</a></li>
                 </ul>
             </div>
