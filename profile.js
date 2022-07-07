@@ -50,3 +50,25 @@ $("#updatepasswordForm").submit(function(event){
 
 
 //Ajax call updateemail.php
+$("#updateemailForm").submit(function(event){    
+    //prevent default php processing
+    event.preventDefault();
+    //collect users inputs
+    var datatopost=$(this).serializeArray();
+    //send them to updateusername.php using ajax
+    $.ajax({
+        url:"updateemail.php",
+        type:"POST",
+        data: datatopost,
+        success:function(data){
+            if(data){
+                //ajax calls successful: show error or success message
+                $("#updateemailmessage").html(data);
+            }
+        },
+        error: function(){
+            //ajax call fails: show ajax call error
+            $("#updateemailmessage").html("<div class='alert alert-danger'>Ajax call error</div>");
+        }
+    });
+});

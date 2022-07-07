@@ -118,7 +118,7 @@ $email=$_SESSION["email"];
                         </tr>
                         <tr data-target="#updatepassword" data-toggle="modal">
                             <td>Password</td>
-                            <td>hidden</td>
+                            <td>******</td>
                         </tr>
                     </table>
                 </div>
@@ -164,12 +164,13 @@ $email=$_SESSION["email"];
                 <h4 id="myModalLabel">Enter new email:</h4>
                 </div>
                 <div class="modal-body">
-                    <!-- login message from php file -->
-                    <div id="loginMessage"></div>
+
+                    <!-- update email message from php file -->
+                    <div id="updateemailmessage"></div>
 
                     <div class="form-group">
-                        <label for="loginemail">Email:</label>
-                        <input class="form-control" id="email" type="email" name="email" maxlength="50" value="email value">
+                        <label for="email">Email:</label>
+                        <input class="form-control" id="email" type="email" name="email" maxlength="50" value="<?php echo $email;?>">
                     </div>
 
                 </div>
