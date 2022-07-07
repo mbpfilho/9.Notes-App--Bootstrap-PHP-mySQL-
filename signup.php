@@ -91,7 +91,7 @@ if($results){
 $activationKey=bin2hex(openssl_random_pseudo_bytes(16));
 
 //             insert user details and activation code in users table
-$sql="INSERT INTO users (username,email,password,activation) VALUES ('$username','$email','$password','$activationKey')";
+$sql="INSERT INTO users (username,email,password,activation,activationkey) VALUES ('$username','$email','$password',FALSE,'$activationKey')";
 $result=mysqli_query($link,$sql);
 if(!$result){
     echo "<div class='alert alert-danger'><p>Error inserting user details in the database.</p><p>".mysqli_error($link)."</p></div>";

@@ -34,7 +34,7 @@ if($count==1){
 $activationKey=bin2hex(openssl_random_pseudo_bytes(16));
 
 //insert the new activation code in the users table
-$sql="UPDATE users SET activation2='$activationKey' WHERE user_id='$user_id'"; //***************************** */
+$sql="UPDATE users SET activationkey='$activationKey' WHERE user_id='$user_id'"; //***************************** */
 $result=mysqli_query($link,$sql);
 
 if(!$result){
