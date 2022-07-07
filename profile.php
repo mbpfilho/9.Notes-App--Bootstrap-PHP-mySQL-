@@ -183,7 +183,7 @@ $email=$_SESSION["email"];
         </div>
     </form>
 
-    <!-- update pasword form -->
+    <!-- update password form -->
     <form method="post" id="updatepasswordForm">
         <div class="modal" id="updatepassword" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">

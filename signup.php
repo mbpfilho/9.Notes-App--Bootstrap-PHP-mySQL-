@@ -99,7 +99,7 @@ if(!$result){
 }
 //             send user email with link do activate.php with email and actovation code
 $message="Please click on this link to activate your account:\n\n";
-$message.="http://localhost/9.Notes%20App%20(Bootstrap%20PHP%20mySQL)/activate.php?email=".urlencode($email)."&key=$activationKey";
+$message.="http://localhost/9.Notes-App--Bootstrap-PHP-mySQL-/activate.php?email=".urlencode($email)."&key=$activationKey";
 if(mail($email,"Confirm your registration",$message,"From:"."mabuened@gmail.com")){
     echo "<div class='alert alert-success'>Thank you for registring! A confirmation email has been sent to $email. Please click on the activation link to activate your account.</div>";
 }else{
