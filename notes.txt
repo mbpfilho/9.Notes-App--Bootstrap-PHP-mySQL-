@@ -24,7 +24,7 @@ CREATE TABLE rememberme(
 
 CREATE TABLE notes(
     note_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    note TEXT(5000),
-    time int(11) not null,
-    user_id int(11)
+    note TEXT,
+    time int(10) not null,
+    user_id int
 )
