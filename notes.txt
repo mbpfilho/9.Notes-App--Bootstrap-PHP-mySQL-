@@ -1,5 +1,5 @@
 CREATE TABLE users (
-    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     username varchar(30),
     email varchar(50),
     password varchar(64),
@@ -8,23 +8,23 @@ CREATE TABLE users (
 )
 
 CREATE TABLE forgotpassword(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    user_id int(11) not null,
-    key1 char(32) not null,
-    time int(11) not null
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id int,
+    key1 char(32),
+    time int
 )
 
 CREATE TABLE rememberme(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     authentificator1 char(20),
     f2authentificator2 char(64),
-    user_id int(11),
+    user_id int,
     expires datetime
 )
 
 CREATE TABLE notes(
-    note_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    note TEXT(5000),
-    time int(11) not null,
-    user_id int(11)
+    id INT(4) AUTO_INCREMENT PRIMARY KEY,
+    note TEXT,
+    time int(10),
+    user_id int(4)
 )
