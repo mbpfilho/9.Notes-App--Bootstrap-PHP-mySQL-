@@ -37,7 +37,7 @@ $password=mysqli_real_escape_string($link,$password);
 $password=hash("sha256",$password); //256 bits -> 64 characters
 
 //     <!-- run query: check combination email and password -->
-$sql="SELECT * FROM users WHERE email='$email' AND password='$password' AND activation='activated'";
+$sql="SELECT * FROM users WHERE email='$email' AND password='$password' AND activation=TRUE";
 $result=mysqli_query($link,$sql);
 //check if query ran successfully
 if(!$result){

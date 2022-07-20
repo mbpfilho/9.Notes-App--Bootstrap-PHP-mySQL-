@@ -54,7 +54,7 @@ $newemail=mysqli_real_escape_string($link,$newemail);
 $key=mysqli_real_escape_string($link,$key);
 
 //     run query: update email
-$sql="UPDATE users SET email='$newemail', activation2='0' WHERE (email='$email' AND activation2='$key') LIMIT 1";
+$sql="UPDATE users SET email='$newemail', activationkey='0' WHERE (email='$email' AND activationkey='$key') LIMIT 1";
 //********************************* */
 
 $result=mysqli_query($link,$sql);

@@ -50,7 +50,7 @@ $key=$_GET["key"];
 $email=mysqli_real_escape_string($link,$email);
 $key=mysqli_real_escape_string($link,$key);
 //     run query: set activation field do activated for provided email
-$sql="UPDATE users SET activation='activated' WHERE (email='$email' AND activation='$key') LIMIT 1";
+$sql="UPDATE users SET activation=TRUE,activationkey='0' WHERE (email='$email' AND activationkey='$key') LIMIT 1";
 $result=mysqli_query($link,$sql);
 //     if query successful, show message and invite to login
 if(mysqli_affected_rows($link)==1){

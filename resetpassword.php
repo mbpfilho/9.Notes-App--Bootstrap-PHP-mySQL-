@@ -3,7 +3,7 @@
 
 // this file display a form to input new password 
 
-// signup link contains two GET parameters: email and activation key
+// RESETPASSWORD link contains two GET parameters: user_id and  key
 session_start();
 include("connection.php");
 ?>

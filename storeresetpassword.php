@@ -3,7 +3,7 @@
 
 // this file then resets password is all checks are correct
 
-// signup link contains two GET parameters: email and activation key
+// two POST parameters: iser_id, generated key 
 session_start();
 include("connection.php");
 // user_id or key1 missing 
